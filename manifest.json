@@ -1,0 +1,16 @@
+{
+  "name": "Cines Unidos",
+  "version": "1.0.6",
+  "descripcion": "Información de lo que hay en cartelera actualmente en Venezuela",
+  "icons": {"48": "img/48.png", "128": "img/128.png"},
+  "options_page": "view/options.html",
+  "permissions": [
+    "tabs",
+    "http://www.cinesunidos.com/"
+  ],
+  "browser_action": {
+    "default_icon": "img/19.png",
+    "default_title": "Estrenos",
+    "popup": "view/popup.html"
+  } 
+}

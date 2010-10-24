@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Opciones de Cines Unidos</title>
+<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+<script type="text/javascript">
+function save_options() {
+  var select = document.getElementById("ciudad");
+  var ciudad = select.children[select.selectedIndex].value;
+  localStorage["ciudad"] = ciudad;
+
+  // Update status to let user know options were saved.
+  var status = document.getElementById("status");
+  status.innerHTML = "Ciudad seleccionada.";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 750);
+}
+
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+  var ciudad = localStorage["ciudad"];
+  if (!ciudad) {
+    return;
+  }
+  var select = document.getElementById("ciudad");
+  for (var i = 0; i < select.children.length; i++) {
+    var child = select.children[i];
+    if (child.value == ciudad) {
+      child.selected = "true";
+      break;
+    }
+  }
+}
+</script>
+</head>
+<body onload="restore_options()">
+<div id="opciones">
+  Selecciones su ciudad:
+  <select id="ciudad">
+   <option value="bqto">--</option>
+   <option value="bqto">Barquisimeto</option>
+   <option value="ccs">Caracas</option>
+   <option value="coro">Coro</option>
+   <option value="mcbo">Maracaibo</option>
+   <option value="mcy">Maracay</option>
+   <option value="mgta">Margarita</option>
+   <option value="mrin">Maturin</option>
+   <option value="plc">Puerto La Cruz</option>
+   <option value="pord">Puerto Ordaz</option>
+   <option value="sc">San Cristobal</option>
+   <option value="val">Valencia</option>
+  </select>
+  <div id="status"></div>
+  <br>
+  <button onclick="save_options()">Guardar</button>
+</div>
+</body>
+</html>

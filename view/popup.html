@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../jquery.min.js"></script>
+<script src="../jquery.jgfeed-min.js"></script>
+<script src="../JSON.js"></script>
+<script src="../controller/popup.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+</head>
+<body onload="getMovies()">
+    <div id="cargando">
+        <img src="../img/loading.gif" />
+    </div>
+                
+    <div id="valor"></div>
+    <div id="container" style="display:none">
+        <div>
+        	<span id="updated"></span>
+            <ul id="filter">
+                <li><a href="javascript:opciones();" id="conf">Configurar</a></li>
+            </ul>
+            <div style="clear:right;"></div>
+        <div>
+    	<h1></h1>
+    	<h2></h2>
+        <div id="content">
+        </div>
+    </div>
+</body>
+</html>
